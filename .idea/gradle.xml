@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="distributionType" value="WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="#JAVA_INTERNAL" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Car Sharing/task" />
+            <option value="$PROJECT_DIR$/Car Sharing/task/build/classes/java" />
+            <option value="$PROJECT_DIR$/Car Sharing/task/build/generated/sources/annotationProcessor/java" />
+            <option value="$PROJECT_DIR$/Car Sharing/task/build/generated/sources/headers/java" />
+            <option value="$PROJECT_DIR$/Car Sharing/task/build/reports/tests" />
+            <option value="$PROJECT_DIR$/Car Sharing/task/build/test-results" />
+            <option value="$PROJECT_DIR$/Car Sharing/task/build/tmp" />
+            <option value="$PROJECT_DIR$/Topics/Data Access Object for JDBC/All we need is CRUD" />
+            <option value="$PROJECT_DIR$/Topics/Data Access Object for JDBC/DAO pattern in use" />
+            <option value="$PROJECT_DIR$/Topics/Data Access Object for JDBC/DAO pattern interface declaration" />
+            <option value="$PROJECT_DIR$/Topics/Data Access Object for JDBC/DAO pattern usage" />
+            <option value="$PROJECT_DIR$/Topics/Data Access Object for JDBC/Data stores usage" />
+            <option value="$PROJECT_DIR$/Topics/Data Access Object for JDBC/List-based implementation" />
+            <option value="$PROJECT_DIR$/Topics/Data Access Object for JDBC/Map-based implementation" />
+            <option value="$PROJECT_DIR$/Topics/Data Access Object for JDBC/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Iterating over arrays/Check if an array contains two numbers" />
+            <option value="$PROJECT_DIR$/Topics/Iterating over arrays/Check if an array is sorted ascending" />
+            <option value="$PROJECT_DIR$/Topics/Iterating over arrays/Classifying integers as 'Odd' or 'Even'" />
+            <option value="$PROJECT_DIR$/Topics/Iterating over arrays/Determining even or odd numbers in an array" />
+            <option value="$PROJECT_DIR$/Topics/Iterating over arrays/Find the sum" />
+            <option value="$PROJECT_DIR$/Topics/Iterating over arrays/Right Rotation" />
+            <option value="$PROJECT_DIR$/Topics/Iterating over arrays/Select loops" />
+            <option value="$PROJECT_DIR$/Topics/Iterating over arrays/Select one loop" />
+            <option value="$PROJECT_DIR$/Topics/Iterating over arrays/Sneak Peek  Unveiling the Array's Secrets" />
+            <option value="$PROJECT_DIR$/Topics/Iterating over arrays/Sum array elements greater than a value" />
+            <option value="$PROJECT_DIR$/Topics/Iterating over arrays/The index of the first max in an array" />
+            <option value="$PROJECT_DIR$/Topics/Iterating over arrays/The sum of array elements" />
+            <option value="$PROJECT_DIR$/Topics/Iterating over arrays/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Iterating over arrays/Two numbers never occur next to each other" />
+            <option value="$PROJECT_DIR$/Topics/Referencing subclass objects/Find incorrect assignments" />
+            <option value="$PROJECT_DIR$/Topics/Referencing subclass objects/Implementing class hierarchy for animals and sounds" />
+            <option value="$PROJECT_DIR$/Topics/Referencing subclass objects/Implementing vehicle hierarchy with wheels" />
+            <option value="$PROJECT_DIR$/Topics/Referencing subclass objects/Incorrect assignments" />
+            <option value="$PROJECT_DIR$/Topics/Referencing subclass objects/Incorrect statements" />
+            <option value="$PROJECT_DIR$/Topics/Referencing subclass objects/Invalid method invocations" />
+            <option value="$PROJECT_DIR$/Topics/Referencing subclass objects/Select the correct statement" />
+            <option value="$PROJECT_DIR$/Topics/Referencing subclass objects/Statement" />
+            <option value="$PROJECT_DIR$/Topics/Referencing subclass objects/Subclasses and superclasses" />
+            <option value="$PROJECT_DIR$/Topics/Referencing subclass objects/Suitable types" />
+            <option value="$PROJECT_DIR$/Topics/Referencing subclass objects/The correct assignments" />
+            <option value="$PROJECT_DIR$/Topics/Referencing subclass objects/Theory" />
+            <option value="$PROJECT_DIR$/util" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

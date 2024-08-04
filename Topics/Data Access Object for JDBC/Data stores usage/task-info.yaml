@@ -1,0 +1,15 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: Databases
+  - text: File
+  - text: Java Collection object
+  - text: In-memory storage
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20192#comment
+status: Solved
+record: -1
+local_check: false

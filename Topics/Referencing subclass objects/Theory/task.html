@@ -1,0 +1,102 @@
+<div class="step-text">
+<p>As you know, in Java, classes are organized into a hierarchy, which allows us to refer to objects in different ways. A class that is derived from another class is called a subclass. A class from which the subclass is derived is called a superclass. In this topic, you will learn the two ways to refer to a subclass object. You will find out when it is a good idea to use a <a class="theory-lookup not-relevant" href="/learn/step/3585" rel="noopener noreferrer nofollow" target="_blank" title="In Java, a superclass reference is a reference variable of a superclass that is used to refer to an object of a subclass. | This is possible because a subclass is a specialized version of its superclass, and therefore, an object of a subclass can be treated as an object of its superclass. However, when using a superclass reference to refer to a subclass object, you can only access the members of the superclass, not the members of the subclass. This is because the superclass reference does not know about the existence of the subclass-specific members.">superclass reference</a> and what restrictions you should keep in mind. </p>
+<h5 id="how-to-refer-to-a-subclass-object">How to refer to a subclass object</h5>
+<p>There are two ways to refer to a subclass object:</p>
+<p><strong>1. Using the <a class="theory-lookup not-relevant" href="/learn/step/3585" rel="noopener noreferrer nofollow" target="_blank" title="In Java, a subclass reference is a reference variable of a subclass type that can be used to refer to an object of the subclass. | This allows for polymorphism, where a subclass object can be treated as an instance of its superclass. This is useful in situations where you want to process a group of objects that share a common superclass, but are actually instances of different subclasses. However, when using a superclass reference to refer to a subclass object, you can only access the members of the superclass and not the members that are unique to the subclass.">subclass reference</a></strong>: you can use the subclass reference to refer to its object;</p>
+<p><strong>2. Using the superclass reference</strong>: you can use a <a class="theory-lookup not-relevant" href="/learn/step/3585" rel="noopener noreferrer nofollow" target="_blank" title="In Java, a reference variable is a variable that refers to an object or instance of a class. | When an object is created using the new operator, it returns a reference in memory where the object is located. With this reference, you can access and modify the object's fields. Multiple variables can refer to the same object through a reference. It is also possible to create two independent objects with the same field's content, but it's important to note that references to such objects are different. Assigning one value of a reference variable to another creates a copy of the reference rather than the value itself. Comparing reference types using '==' checks if the references point to the same object, whereas comparing primitive types checks for value equality. When comparing two variables of a reference type, it compares the references (memory addresses) rather than the actual values. A variable of a reference type can refer to a special value that represents the fact that it is not initialized yet or does not have a value. This is different from primitive types, where a variable stores the actual value, whereas a variable of a reference type stores a memory address (reference) where the data is located.">reference variable</a> of the superclass to refer to any subclass object derived from that superclass because a subclass is a special case of the superclass.</p>
+<p>Let's consider an example of a <a class="theory-lookup not-relevant" href="/learn/step/3585" rel="noopener noreferrer nofollow" target="_blank" title="In Java, a class hierarchy is a way of organizing classes in a parent-child relationship, where a child class inherits properties and methods from its parent class, also known as the superclass. | This mechanism enables code reuse and facilitates the building of a class hierarchy. In the context of a company's activity, for example, a class hierarchy could include a base class with common data fields such as name, year of birth, and address. Derived classes could then add additional fields specific to their purpose, such as a contract number and status for a client class, or start date of work and salary for an employee class. In Java, a class can only inherit from one superclass, but a superclass can have multiple subclasses. It's important to note that constructors are not inherited, but the superclass's constructor can be invoked from the subclass. When working with class hierarchies, you can refer to a subclass object in two ways: using a subclass reference or using a superclass reference. The latter allows you to refer to any subclass using a superclass reference variable.">class hierarchy</a>.</p>
+<pre><code class="language-java">class Person {
+
+    protected String name;
+    protected int yearOfBirth;
+    protected String address;
+
+    // public getters and setters for all fields
+}
+
+class Client extends Person {
+
+    protected String contractNumber;
+    protected boolean gold;
+
+    // public getters and setters for all fields
+}
+
+class Employee extends Person {
+
+    protected Date startDate;
+    protected Long salary;
+
+    // public getters and setters for all fields
+}
+</code></pre>
+<p>As you know, each of the presented classes has a default no-args constructor.</p>
+<p>Now let's see both approaches to the reference in action.</p>
+<p>1. <strong>Subclass reference</strong>. We can create instances of the subclasses using the constructor:</p>
+<pre><code class="language-java">Person person = new Person(); // the reference is Person, the object is Person
+Client client = new Client(); // the reference is Client, the object is Client
+Employee employee = new Employee(); // the reference is Employee, the object is Employee</code></pre>
+<p>In this case, we used<strong> subclass references</strong> because the types of the references and the created object are the same.</p>
+<p>2. <strong>Superclass reference</strong>. When creating objects using the constructor, we can refer to a subclass object using the reference to the superclass:</p>
+<pre><code class="language-java">Person client = new Client(); // the reference is Person, the object is Client
+Person employee = new Employee(); // the reference is Person, the object is Employee
+</code></pre>
+<p>In this case, we used the <strong>superclass reference</strong> because the references have the type of the superclass and the actual types of created objects are subclasses.</p>
+<p>Remember, that: </p>
+<ul><li><p>you cannot assign an object of one subclass to a reference of another subclass because they don't inherit each other:</p></li></ul>
+<pre><code class="language-java">Client whoIsIt = new Employee(); // it's impossible</code></pre>
+<ul><li><p>you cannot assign an object of the <a class="theory-lookup not-relevant" href="/learn/step/3585" rel="noopener noreferrer nofollow" target="_blank" title="In Java, a parent class, also known as a superclass or base class, is a class that is extended by another class, known as a subclass or derived class. | It serves as a blueprint for the subclass, providing it with inherited fields and methods. A parent class can have multiple child classes, but a child class can only have one parent class due to Java's single inheritance feature. The parent class reference can be used to refer to a subclass object, allowing for polymorphism and code reuse.">parent class</a> to the reference of its subclass:</p></li></ul>
+<pre><code class="language-java">Client client = new Person(); // it's impossible too</code></pre>
+<p></p>
+<div class="alert alert-primary"><p>The basic rule goes like this: <br/>If class A is a superclass of class B and class B is a superclass of class C then a variable of class A can reference any object derived from that class (for instance, objects of the class B and the class C). This is possible because each subclass object is an object of its superclass but not vice versa.</p></div>
+<p></p>
+<h5 id="accessing-fields-and-methods-through-a-superclass-reference">Accessing fields and methods through a superclass reference</h5>
+<p>We can use a superclass reference for any subclass object derived from it. However, we cannot access specific members of the subclass through the <a class="theory-lookup not-relevant" href="/learn/step/3585" rel="noopener noreferrer nofollow" target="_blank" title="In Java, a base class, also known as a superclass or parent class, is a class that is extended by another class, known as a subclass or derived class. | It serves as a blueprint for the subclass, providing it with inherited fields and methods. A parent class can have multiple child classes, but a child class can only have one parent class due to Java's single inheritance feature. The parent class reference can be used to refer to any subclass object derived from that superclass. An abstract class is often used as a base class in a hierarchy, and it represents an abstract concept that is used as a base class for subclasses.">base class</a> reference. We have access only to those members of the object that are defined by the type of reference.</p>
+<p>Here is an example; in the considered hierarchy, each class has getters and setters to access protected fields from the outside.</p>
+<pre><code class="language-java">Person employee = new Employee();
+
+employee.setName("Ginger R. Lee"); // Ok
+employee.setYearOfBirth(1980); // Ok
+employee.setSalary(30000); // Compile-time error, the base class "doesn't know" about the method
+</code></pre>
+<p>The superclass <code class="language-java">Person</code> doesn't have the method <code class="language-java">setSalary</code> of the class <code class="language-java">Employee</code>. You cannot invoke the method through the superclass reference. The same rule holds for fields.</p>
+<h5 id="casting-between-superclass-and-subclass">Casting between superclass and subclass</h5>
+<p>You can always cast an object of a subclass to its superclass. It may also be possible to cast an object of a superclass type to a subclass, but only if the object is an instance of this subclass, otherwise a <code class="language-java">ClassCastException</code> will be thrown. Be careful when casting a class to its subclass.</p>
+<pre><code class="language-java">Person person = new Client();
+
+Client clientAgain = (Client) person; // it's ok
+Employee employee = (Employee) person; // the ClassCastException occurs here
+</code></pre>
+<p>After successfully casting a superclass to a subclass, we can access subclass-specific members.</p>
+<h5 id="when-to-use-the-superclass-reference">When to use the superclass reference</h5>
+<p>When to use a superclass reference in practice may not be so obvious. Moreover, using a superclass reference imposes some restrictions on accessing class members. There are two common cases:</p>
+<ul><li><p>processing an array (or another collection) of objects which have different types from the same hierarchy;</p></li><li><p>a method that accepts an object of the base class, but can also work with objects of its subclasses.</p></li></ul>
+<p>What we did is we combined both of these cases into a single example. Our method called <code class="language-java">printNames</code> takes an array of <code class="language-java">Person</code> and displays the names.</p>
+<pre><code class="language-java">public static void printNames(Person[] persons) {
+    for (Person person : persons) {
+        System.out.println(person.getName());
+    }
+}</code></pre>
+<p>This method will work for an array with <code class="language-java">Person</code>, <code class="language-java">Client</code> and <code class="language-java">Employee</code> objects.</p>
+<pre><code class="language-java">Person person = new Employee();
+person.setName("Ginger R. Lee");
+
+Client client = new Client();
+client.setName("Pauline E. Morgan");
+
+Employee employee = new Employee();
+employee.setName("Lawrence V. Jones");
+
+Person[] persons = {person, client, employee};
+
+printNames(persons);</code></pre>
+<p>The output is exactly as we expected:</p>
+<pre><code class="language-java">Ginger R. Lee
+Pauline E. Morgan
+Lawrence V. Jones</code></pre>
+<p>As you can see, base class references have applications in some practical cases. Other cases of using superclass references will be considered in topics related to <strong>polymorphism</strong>.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>You can refer to a subclass object in two ways, using the subclass or the superclass reference. A superclass reference can be used for any of its subclass objects but you cannot assign an object of the parent class to the reference of its subclass. Remember, that when referring to objects with a superclass reference you cannot invoke methods and fields of a subclass.</p>
+<p>You can always cast an object of a subclass to a superclass —  and vice versa, but only if the object is indeed an instance of the subclass. </p>
+<p>In practice, a superclass reference can be successfully applied when processing an array of objects which have the same parent class or when there is a method that accepts an object of the base class. You will learn about other cases of superclass references in topics related to polymorphism.</p>
+</div>

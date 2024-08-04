@@ -1,0 +1,16 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: You cannot cast an object of a subclass to its superclass.
+  - text: We can access subclass specific members through the base class reference.
+  - text: A reference variable of a subclass can be used to refer a superclass object.
+  - text: "If class A is a superclass of class B and B is a superclass of class C then,\
+    \ a variable of class A can reference any object of class B and class C."
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3053#comment
+status: Solved
+record: -1
+local_check: false

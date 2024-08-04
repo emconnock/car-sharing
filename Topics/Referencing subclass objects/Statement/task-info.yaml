@@ -1,0 +1,18 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: A superclass variable can refer to any subclass object derived from it.
+  - text: We can access subclass specific members through the base class reference.
+  - text: "If class A is a superclass of class B and class C, a variable of B can refer\
+    \ an object of class C and vice versa (class B and class C don't inherit each\
+    \ other)."
+  - text: 'You can always cast an object of a superclass to its subclass without any
+    exceptions. '
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3052#comment
+status: Solved
+record: -1
+local_check: false

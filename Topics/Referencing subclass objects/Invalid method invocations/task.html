@@ -1,0 +1,52 @@
+<div class="step-text">
+<p>There is a class hierarchy that includes three classes:<br/>
+</p>
+<pre><code class="language-java">class Animal {
+
+    protected int age;
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+
+class Pet extends Animal {
+
+    protected String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+class Cat extends Pet {
+    
+    protected String color;
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+}
+</code></pre>
+<p><br/>
+Given the following object:</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<pre><code class="language-java">Pet cat = new Cat();</code></pre>
+<p> </p>
+<p><br/>
+Select all <strong>invalid</strong> method invocations.</p>
+</div>
